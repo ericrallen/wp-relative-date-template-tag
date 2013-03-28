@@ -13,7 +13,7 @@
 			var $period, $post_id, $output, $suffix;
 
 			//constructor function
-			public function __construct($per, $id, $suffix) {
+			public function __construct($per, $suffix, $id) {
 				//if there is already an instance
 				if($this->_instance) {
 					//return it
@@ -27,16 +27,16 @@
 						$this->period = '';
 					}
 
-					//check for post id
-					if(is_numeric($id)) {
-						$this->post_id = $id;
-					}
-
 					//check for suffix
 					if(is_string($suffix)) {
 						$this->suffix = ' ' . $suffix;
 					} else {
 						$this->suffix = ' ago';
+					}
+
+					//check for post id
+					if(is_numeric($id)) {
+						$this->post_id = $id;
 					}
 
 					//initialize relative date

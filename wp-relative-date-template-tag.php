@@ -27,26 +27,29 @@ License: MIT
 	/*--------------------------------------------------------------------------
 		
 	get the relative date for the post
-		$type = level of relativity to return (seconds, minutes, hours, etc.)
+		$period = level of relativity to return (seconds, minutes, hours, etc.)
+		$suffix = what to append to returned string, defaults to 'ago', plugin prepends space automatically
 		$id = post->ID to return relative date for
 		
 	--------------------------------------------------------------------------*/
 
-	function get_the_relative_date($period = null, $id = null, $suffix = null) {
-		$relative_date = new ia_Relative_Date($period, $id, $suffix);
+	function get_the_relative_date($period = null, $suffix = null, $id = null) {
+		$relative_date = new ia_Relative_Date($period, $suffix, $id);
+		print_r($relative_date);
 		return $relative_date->output;
 	}
 
 	/*--------------------------------------------------------------------------
 		
 	display the relative date
-		$type = level of relativity to return (seconds, minutes, hours, etc.)
+		$period = level of relativity to return (seconds, minutes, hours, etc.)
+		$suffix = what to append to returned string, defaults to 'ago', plugin prepends space automatically
 		$id = post->ID to return relative date for
 		
 	--------------------------------------------------------------------------*/
 
-	function the_relative_date($period = null, $id = null, $suffix = null) {
-		echo get_the_relative_date($period, $id, $suffix);
+	function the_relative_date($period = null, $suffix = null, $id = null) {
+		echo get_the_relative_date($period, $suffix, $id);
 	}
 
 
