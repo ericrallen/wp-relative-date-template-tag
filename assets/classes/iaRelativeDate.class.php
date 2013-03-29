@@ -10,33 +10,27 @@
 			private $post, $date, $time_period, $time_total, $today, $periods;
 
 			//public vars
-			var $period, $post_id, $output, $suffix;
+			var $output, $options;
+
+			var $defaults = array(
+				'period' => '',
+				'suffix' => 'ago',
+				'id' => ''
+			);
 
 			//constructor function
-			public function __construct($per, $suffix, $id) {
+			public function __construct(array $params = null) {
 				//if there is already an instance
 				if($this->_instance) {
 					//return it
 					return $this->_instance;
 				//if there isn't
 				} else {
-					//check for type string
-					if(is_string($per)) {
-						$this->period = $per;
+					//check for passed parameters
+					if(!empty($params) && is_array($params)) {
+						$this->options = array_merge($this->defaults, $params);
 					} else {
-						$this->period = '';
-					}
-
-					//check for suffix
-					if(is_string($suffix)) {
-						$this->suffix = ' ' . $suffix;
-					} else {
-						$this->suffix = ' ago';
-					}
-
-					//check for post id
-					if(is_numeric($id)) {
-						$this->post_id = $id;
+						$this->options = $this->defaults;
 					}
 
 					//initialize relative date
@@ -78,7 +72,7 @@
 
 			//retrieve post
 			private function get_post() {
-				$this->post = get_post($this->post_id);
+				$this->post = get_post($this->options['id']);
 			}
 
 			//retrieve date
@@ -89,7 +83,7 @@
 			//retrieve relative date
 			private function find_relative() {
 				$since = $this->today - $this->date;
-				$this->check_periods($since, $this->period);
+				$this->check_periods($since, $this->options['period']);
 				$this->check_name();
 				return $this->build_rel_date();
 			}
@@ -161,7 +155,7 @@
 
 			//assemble date
 			private function build_rel_date() {
-				return $this->time_total . ' ' . $this->time_period . $this->suffix;
+				return $this->time_total . ' ' . $this->time_period . ' ' . $this->options['suffix'];
 			}
 
 		}
