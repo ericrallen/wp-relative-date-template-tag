@@ -3,7 +3,7 @@
 Plugin Name: Relative Date Template Tag by InternetAlche.Me
 Plugin URI: https://github.com/ericrallen/wp-relative-date-template-tag
 Description: Add relative date template tags for retrieving how many seconds, minutes, hours, days, weeks, months, years, etc. ago a post was published
-Version: 1.0.1
+Version: 1.0.2
 Author: Eric Allen
 Author URI: http://internetalche.me/
 License: MIT
