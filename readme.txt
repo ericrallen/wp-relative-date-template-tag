@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Relative Date Template Tag ===
 Contributors: ericrallen
 Tags: template tag, relative date, dates
 Requires at least: 3.5.0
