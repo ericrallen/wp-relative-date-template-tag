@@ -17,11 +17,11 @@ These template tags will return the relative time passed since the post was publ
 
 Tag to Print Relative Time:
 
-	`<?php the_relative_date(); ?>`
+	<?php the_relative_date(); ?>
 
 Tag to Retrieve Relative Time:
 
-	`<?php get_the_relative_date(); ?>`
+	<?php get_the_relative_date(); ?>
 
 == Options ==
 
@@ -29,36 +29,36 @@ When calling either template tag you can pass a few optional parameters via an a
 
 Example:
 
-	`<?php //print relative date as "X periods ago"
+	<?php //print relative date as "X periods ago"
 	//where periods is the largest time period that can be calculated for the current post where X >= 1
-	the_relative_date(); ?>`
+	the_relative_date(); ?>
 
 Example:
 
-	`<?php //retrieve relative date as "X periods ago"
+	<?php //retrieve relative date as "X periods ago"
 	//where periods is the largest time period that can be calculated for the current post where X >= 1
-	get_the_relative_date(); ?>`
+	get_the_relative_date(); ?>
 
 Example:
 
-	`<?php //relative date args
+	<?php //relative date args
 	$params = array(
 		'period' => 'minutes'
 	);
 
 	//get relative date as "X minutes ago"
-	get_the_relative_date($params);`
+	get_the_relative_date($params);
 
 Example:
 
-	`$params = array(
+	$params = array(
 		'period' => 'days',
 		'suffix' => 'before now',
 		'id' => 22
 	);
 
 	//prints relative date for post with ID 22 as "X days before now"
-	the_relative_date($params);`
+	the_relative_date($params);
 
 == Relative Time ==
 
