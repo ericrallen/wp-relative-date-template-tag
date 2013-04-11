@@ -139,7 +139,7 @@
 			//check for correct pluralization
 			private function check_name() {
 				//if it's singular
-				if($this->time_total === 1 && is_numeric($this->time_total)) {
+				if($this->time_total < 2 && is_numeric($this->time_total)) {
 					//if this is millenia, change the pluralization accordingly
 					if($this->time_period == 'millenia') {
 						$this->time_period = ' ' . 'millenium';
