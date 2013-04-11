@@ -3,7 +3,7 @@ Contributors: ericrallen
 Tags: template tag, relative date, dates
 Requires at least: 3.5.0
 Tested up to: 3.5.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: MIT
 License URI: http://opensource.org/licenses/mit-license.php
 
@@ -88,6 +88,9 @@ Acceptable `'period'` values (the returned string will be de-pluralized if neede
 Please use the Plug-in's [github page](https://github.com/ericrallen/wp-relative-date-template-tag/issues) for more information
 
 == Changelog ==
+
+= 1.0.5 =
+ + Updated de-pluralize function to work correctly.
 
 = 1.0.0 =
 * First Release. Switched parameters to be an array instead of explicitly-defined parameters to make it easier for developers to only pass the values they need.
