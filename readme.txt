@@ -3,7 +3,7 @@ Contributors: ericrallen
 Tags: template tag, relative date, dates
 Requires at least: 3.5.0
 Tested up to: 3.5.1
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: MIT
 License URI: http://opensource.org/licenses/mit-license.php
 
