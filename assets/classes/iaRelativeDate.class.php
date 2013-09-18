@@ -21,7 +21,7 @@
 			//constructor function
 			public function __construct(array $params = null) {
 				//if there is already an instance
-				if($this->_instance) {
+				if(isset($this->_instance)) {
 					//return it
 					return $this->_instance;
 				//if there isn't
